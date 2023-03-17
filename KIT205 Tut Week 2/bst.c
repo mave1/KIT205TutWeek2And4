@@ -142,12 +142,8 @@ int bst_height_node(BSTNodePtr self) {
 		printf("_");
 	}
 	else {
-		printf("(");
 		left_height = bst_height_node(self->left);
-		printf(" %d ", self->data_item);
 		right_height = bst_height_node(self->right);
-		printf(" %d ", self->data_item);
-		printf(")");
 	}
 
 	if (left_height > right_height) {
