@@ -107,8 +107,42 @@ void print_in_order_bst_node(BSTNodePtr self) {
 	}
 }
 
+void print_pre_order_bst_node(BSTNodePtr self) {
+	if (self == NULL) {
+		printf("_");
+	}
+	else {
+		printf("(");
+		print_in_order_bst_node(self->left);
+		printf(" %d ", self->data_item);
+		print_in_order_bst_node(self->right);
+		printf(")");
+	}
+}
+
+void print_post_order_bst_node(BSTNodePtr self) {
+	if (self == NULL) {
+		printf("_");
+	}
+	else {
+		printf("(");
+		print_in_order_bst_node(self->left);
+		printf(" %d ", self->data_item);
+		print_in_order_bst_node(self->right);
+		printf(")");
+	}
+}
+
 // print the tree in order
 void print_in_order_bst(BST* self) {
+	print_in_order_bst_node(self->root);
+}
+
+void print_pre_order_bst(BST* self) {
+	print_in_order_bst_node(self->root);
+}
+
+void print_post_order_bst(BST* self) {
 	print_in_order_bst_node(self->root);
 }
 
@@ -135,7 +169,7 @@ void bst_test() {
 	int data;
 	while (quit == 0) {
 		printf("Enter some data: ");
-		scanf("%d", &data);
+		scanf_s("%d", &data);
 		if (data != 0) {
 			insert_bst(&tree, data);
 		}
@@ -145,11 +179,11 @@ void bst_test() {
 	}
 	print_in_order_bst(&tree);
 	printf("\n");
-}
 
-int main(int argc, char* argv[]) {
+	//print_pre_order_bst(&tree);
+	//printf("\n");
 
-	bst_test();
+	//print_post_order_bst(&tree);
+	//printf("\n");
 
-	return;
 }
