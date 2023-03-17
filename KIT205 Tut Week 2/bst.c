@@ -133,25 +133,22 @@ void print_post_order_bst_node(BSTNodePtr self) {
 	}
 }
 
-
 int bst_height_node(BSTNodePtr self) {
-	int left_height = 0;
-	int right_height = 0;
-	
+
 	if (self == NULL) {
-		printf("_");
+		return 0;
 	}
 	else {
-		left_height = bst_height_node(self->left);
-		right_height = bst_height_node(self->right);
-	}
+		int left_height = bst_height_node(self->left);
+		int right_height = bst_height_node(self->right);
+	
+		if (left_height > right_height) {
+			return (left_height + 1);
+		}
 
-	if (left_height > right_height) {
-		return left_height + 1;
+		else
+			return (right_height + 1);
 	}
-
-	else
-		return right_height + 1;
 }
 
 // print the tree in order
@@ -167,8 +164,8 @@ void print_post_order_bst(BST* self) {
 	print_post_order_bst_node(self->root);
 }
 
-void bst_height(BST* self) {
-	bst_height_node(self->root);
+int bst_height(BST* self) {
+	return bst_height_node(self->root);
 }
 
 // recursive function to detroy all node
@@ -191,6 +188,7 @@ void destroy_bst(BST* self) {
 void bst_test() {
 	BST tree = new_bst();
 	int quit = 0;
+	int height = bst_height(&tree);
 	int data;
 	while (quit == 0) {
 		printf("Enter some data: ");
@@ -211,6 +209,6 @@ void bst_test() {
 	print_post_order_bst(&tree);
 	printf("\n");
 
-	bst_height(&tree);
-
+	printf("%d", height);
+	printf("\n");
 }
