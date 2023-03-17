@@ -66,6 +66,8 @@ void print_pre_order_bst(BST* self);
 
 void print_post_order_bst(BST* self);
 
+void bst_height(BST* self);
+
 /**
  * @brief Frees all memory allocated for a binary search tree
  *

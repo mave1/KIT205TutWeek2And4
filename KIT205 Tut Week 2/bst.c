@@ -133,6 +133,31 @@ void print_post_order_bst_node(BSTNodePtr self) {
 	}
 }
 
+
+int bst_height_node(BSTNodePtr self) {
+	int left_height = 0;
+	int right_height = 0;
+	
+	if (self == NULL) {
+		printf("_");
+	}
+	else {
+		printf("(");
+		left_height = bst_height_node(self->left);
+		printf(" %d ", self->data_item);
+		right_height = bst_height_node(self->right);
+		printf(" %d ", self->data_item);
+		printf(")");
+	}
+
+	if (left_height > right_height) {
+		return left_height + 1;
+	}
+
+	else
+		return right_height + 1;
+}
+
 // print the tree in order
 void print_in_order_bst(BST* self) {
 	print_in_order_bst_node(self->root);
@@ -144,6 +169,10 @@ void print_pre_order_bst(BST* self) {
 
 void print_post_order_bst(BST* self) {
 	print_post_order_bst_node(self->root);
+}
+
+void bst_height(BST* self) {
+	bst_height_node(self->root);
 }
 
 // recursive function to detroy all node
@@ -185,5 +214,7 @@ void bst_test() {
 
 	print_post_order_bst(&tree);
 	printf("\n");
+
+	bst_height(&tree);
 
 }
