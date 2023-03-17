@@ -188,7 +188,7 @@ void destroy_bst(BST* self) {
 void bst_test() {
 	BST tree = new_bst();
 	int quit = 0;
-	int height = bst_height(&tree);
+	int height = 0;
 	int data;
 	while (quit == 0) {
 		printf("Enter some data: ");
@@ -209,6 +209,7 @@ void bst_test() {
 	print_post_order_bst(&tree);
 	printf("\n");
 
+	height = bst_height(&tree);
 	printf("%d", height);
 	printf("\n");
 }

@@ -48,50 +48,50 @@ void reverse(List* self)
 
 }
 
-//void merge(List* self, List* other) 
-//{
-//
-//}
+void merge(List* self, List* other) 
+{
+
+}
 
 
-//int main(int argc, char* argv[])
-//{
-//	List my_list = new_list();
-//
-//	int quit = 0;
-//
-//	while (!quit) {
-//		int option;
-//
-//		printf("Enter an int: ");
-//		scanf_s("%d", &option);
-//
-//		switch (option) {
-//		case 0:
-//			quit = 1;
-//			break;
-//		case 1:
-//			option_insert(&my_list);
-//			break;
-//		case 2:
-//			option_delete(&my_list);
-//			break;
-//		case 3:
-//			option_print(&my_list);
-//			break;
-//		case 4:
-//			reverse(&my_list);
-//			break;
-//		}
-//
-//	}
-//
-//	destroy_list(&my_list);
-//}
+int list()
+{
+	List my_list = new_list();
+
+	int quit = 0;
+
+	while (!quit) {
+		int option;
+
+		printf("Enter an int: ");
+		scanf_s("%d", &option);
+
+		switch (option) {
+		case 0:
+			quit = 1;
+			break;
+		case 1:
+			option_insert(&my_list);
+			break;
+		case 2:
+			option_delete(&my_list);
+			break;
+		case 3:
+			option_print(&my_list);
+			break;
+		case 4:
+			reverse(&my_list);
+			break;
+		}
+	}
+
+	destroy_list(&my_list);
+}
 
 
 int main(int argc, char* argv[]) {
 
+	list();
 	bst_test();
 	
 	return;
