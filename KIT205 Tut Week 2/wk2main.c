@@ -59,11 +59,12 @@ int list()
 	List my_list = new_list();
 
 	int quit = 0;
+	printf("Linked List \n");
 
 	while (!quit) {
 		int option;
 
-		printf("Enter an int: ");
+		printf("Enter an int (1 = insert, 2 = delete, 3 = print, 4 = reverse, 5 = merge, 0 = quit): ");
 		scanf_s("%d", &option);
 
 		switch (option) {
@@ -86,6 +87,8 @@ int list()
 	}
 
 	destroy_list(&my_list);
+
+	printf("\n");
 }
 
 

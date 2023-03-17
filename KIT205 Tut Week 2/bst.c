@@ -190,6 +190,9 @@ void bst_test() {
 	int quit = 0;
 	int height = 0;
 	int data;
+
+	printf("Binary Search Tree (0 = quit)\n");
+
 	while (quit == 0) {
 		printf("Enter some data: ");
 		scanf_s("%d", &data);
@@ -200,15 +203,20 @@ void bst_test() {
 			quit = 1;
 		}
 	}
+
+	printf("\nIn order:\n");
 	print_in_order_bst(&tree);
-	printf("\n");
+	printf("\n\n");
 
+	printf("Pre order:\n");
 	print_pre_order_bst(&tree);
-	printf("\n");
+	printf("\n\n");
 
+	printf("Post order:\n");
 	print_post_order_bst(&tree);
-	printf("\n");
+	printf("\n\n");
 
+	printf("The height of the tree: ");
 	height = bst_height(&tree);
 	printf("%d", height);
 	printf("\n");
