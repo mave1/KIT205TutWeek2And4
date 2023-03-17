@@ -113,9 +113,9 @@ void print_pre_order_bst_node(BSTNodePtr self) {
 	}
 	else {
 		printf("(");
-		print_in_order_bst_node(self->left);
 		printf(" %d ", self->data_item);
-		print_in_order_bst_node(self->right);
+		print_pre_order_bst_node(self->left);
+		print_pre_order_bst_node(self->right);
 		printf(")");
 	}
 }
@@ -126,9 +126,9 @@ void print_post_order_bst_node(BSTNodePtr self) {
 	}
 	else {
 		printf("(");
-		print_in_order_bst_node(self->left);
+		print_post_order_bst_node(self->left);
+		print_post_order_bst_node(self->right);
 		printf(" %d ", self->data_item);
-		print_in_order_bst_node(self->right);
 		printf(")");
 	}
 }
@@ -139,11 +139,11 @@ void print_in_order_bst(BST* self) {
 }
 
 void print_pre_order_bst(BST* self) {
-	print_in_order_bst_node(self->root);
+	print_pre_order_bst_node(self->root);
 }
 
 void print_post_order_bst(BST* self) {
-	print_in_order_bst_node(self->root);
+	print_post_order_bst_node(self->root);
 }
 
 // recursive function to detroy all node
@@ -180,10 +180,10 @@ void bst_test() {
 	print_in_order_bst(&tree);
 	printf("\n");
 
-	//print_pre_order_bst(&tree);
-	//printf("\n");
+	print_pre_order_bst(&tree);
+	printf("\n");
 
-	//print_post_order_bst(&tree);
-	//printf("\n");
+	print_post_order_bst(&tree);
+	printf("\n");
 
 }
