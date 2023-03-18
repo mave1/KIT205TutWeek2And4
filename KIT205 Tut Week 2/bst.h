@@ -62,10 +62,25 @@ void delete_bst(BST* self, int n);
  */
 void print_in_order_bst(BST* self);
 
+/**
+ * @brief Prints the data items of a binary search tree in pre order
+ *
+ * @param self Pointer to the binary search tree to print
+ */
 void print_pre_order_bst(BST* self);
 
+/**
+ * @brief Prints the data items of a binary search tree in post order
+ *
+ * @param self Pointer to the binary search tree to print
+ */
 void print_post_order_bst(BST* self);
 
+/**
+ * @brief finds the height of the binary search tree
+ *
+ * @param self Pointer to the binary search tree to calculate the height
+ */
 int bst_height(BST* self);
 
 /**
@@ -75,4 +90,7 @@ int bst_height(BST* self);
  */
 void destroy_bst(BST * self); 
 
+/**
+ * @brief Tests the code of the program
+ */
 void bst_test();
