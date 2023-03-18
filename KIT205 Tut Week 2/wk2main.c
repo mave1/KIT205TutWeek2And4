@@ -90,7 +90,7 @@ List merge(List* self, List* other) {
 }
 
 // function to display the options of the program
-int list() {
+void list() {
 	List my_list = new_list();
 	List other_list = new_list();
 
@@ -139,7 +139,7 @@ int list() {
 }
 
 // tests the linked list and binary search tree code
-int main(int argc, char* argv[]) {
+void main(int argc, char* argv[]) {
 	list();
 	bst_test();
 	
