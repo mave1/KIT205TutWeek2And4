@@ -30,28 +30,28 @@ void option_print(List* self) {
 
 // a function that reverses a linked list
 List reverse(List* self) {
-	List reverse_list = new_list(); //creating a new list for the reverse
+	List reverse_list = new_list(); // creating a new list for the reverse
 	int size = 0;
 
 	ListNodePtr current = self->head;
 	ListNodePtr next = NULL;
 
-	//counts the size of the list
+	// counts the size of the list
 	while (current != NULL) {
 		size++;
 		current = current->next;
 	}
 
-	//reset the pointer
+	// reset the pointer
 	current = self->head;
 
-	//insert at the front until at the end of the list
+	// insert at the front until at the end of the list
 	for (int i = 0; i < size; i++) {
 		insert_at_front(&reverse_list, current->data);
 		current = current->next;
 	}
 
-	//display list
+	// display list
 	return reverse_list;
 }
 
@@ -61,7 +61,7 @@ List merge(List* self, List* other) {
 	ListNodePtr self_current = self->head;
 	ListNodePtr other_current = other->head;
 	
-	//while not at the end of each list, insert the smaller number into the merged list
+	// while not at the end of each list, insert the smaller number into the merged list
 	while (self_current != NULL && other_current != NULL) {
 		if (self_current->data <= other_current->data) {
 			insert_at_front(&merge_list, self_current->data);
@@ -83,7 +83,7 @@ List merge(List* self, List* other) {
 		other_current = other_current->next;
 	}
 
-	//reverse and return the merged list so the smaller numbers are at the front
+	// reverse and return the merged list so the smaller numbers are at the front
 	merge_list = reverse(&merge_list);
 	return merge_list;
 	
@@ -97,7 +97,7 @@ int list() {
 	int quit = 0;
 	printf("Linked List \n");
 
-	//while not quit, display the menu
+	// while not quit, display the menu
 	while (!quit) {
 		int option;
 
@@ -121,7 +121,7 @@ int list() {
 			my_list = reverse(&my_list);
 			break;
 		case 5:
-			//hardcode a second list to merge with the user's inputted list
+			// hardcode a second list to merge with the user's inputted list
 			insert_at_front(&other_list, 12);
 			insert_at_front(&other_list, 9);
 			insert_at_front(&other_list, 8);
@@ -132,13 +132,13 @@ int list() {
 		}
 	}
 
-	//destroy both lists
+	// destroy both lists
 	destroy_list(&my_list);
 	destroy_list(&other_list);
 	printf("\n");
 }
 
-//tests the linked list and binary search tree code
+// tests the linked list and binary search tree code
 int main(int argc, char* argv[]) {
 	list();
 	bst_test();

@@ -137,18 +137,18 @@ void print_post_order_bst_node(BSTNodePtr self) {
 
 // recursive function to calculate the height of the binary search tree
 int bst_height_node(BSTNodePtr self) {
-	if (self == NULL) { //if the root is empty, return 0
+	if (self == NULL) { // if the root is empty, return 0
 		return 0;
 	}
 	else {
-		int left_height = bst_height_node(self->left); //traverses the left side
-		int right_height = bst_height_node(self->right); //traverses the rigt side
+		int left_height = bst_height_node(self->left); // traverses the left side
+		int right_height = bst_height_node(self->right); // traverses the rigt side
 	
 		if (left_height > right_height) { 
-			return (left_height + 1); //adds a level on the left side
+			return (left_height + 1); // adds a level on the left side
 		}
 		else
-			return (right_height + 1); //adds a level on the right side
+			return (right_height + 1); // adds a level on the right side
 	}
 }
 
@@ -170,7 +170,7 @@ void print_post_order_bst(BST* self) {
 	print_post_order_bst_node(self->root);
 }
 
-//print the height of the binary search tree
+// print the height of the binary search tree
 int bst_height(BST* self) {
 	return bst_height_node(self->root);
 }
@@ -192,7 +192,7 @@ void destroy_bst(BST* self) {
 	self->root = NULL;
 }
 
-//tests the functions of the binary search tree
+// tests the functions of the binary search tree
 void bst_test() {
 	BST tree = new_bst();
 	int quit = 0;
@@ -201,7 +201,7 @@ void bst_test() {
 
 	printf("Binary Search Tree (0 = quit)\n");
 
-	//while the user has not decided to quit, allow them to add more data to the tree
+	// while the user has not decided to quit, allow them to add more data to the tree
 	while (quit == 0) {
 		printf("Enter some data: ");
 		scanf_s("%d", &data);
