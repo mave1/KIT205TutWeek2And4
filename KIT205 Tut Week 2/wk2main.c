@@ -31,21 +31,26 @@ void option_print(List* self)
 void reverse(List* self)
 {
 	List reverse_list = new_list();
+	int size = 0;
 
 	ListNodePtr current = self->head;
-	ListNodePtr prev = NULL;
+	ListNodePtr next = NULL;
 
 	while (current != NULL) 
 	{
-		int rdata = current->data;
-		insert_at_rear(&reverse_list, rdata);
+		size++;
+		current = current->next;
+	}
 
-		prev = current;
+	current = self->head;
+
+	for (int i = 0; i < size; i++) 
+	{
+		insert_at_front(&reverse_list, current->data);
 		current = current->next;
 	}
 
 	print_list(&reverse_list);
-
 }
 
 void merge(List* self, List* other) 
@@ -87,13 +92,12 @@ int list()
 	}
 
 	destroy_list(&my_list);
-
 	printf("\n");
 }
 
 
-int main(int argc, char* argv[]) {
-
+int main(int argc, char* argv[]) 
+{
 	list();
 	bst_test();
 	

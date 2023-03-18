@@ -134,7 +134,6 @@ void print_post_order_bst_node(BSTNodePtr self) {
 }
 
 int bst_height_node(BSTNodePtr self) {
-
 	if (self == NULL) {
 		return 0;
 	}
@@ -145,7 +144,6 @@ int bst_height_node(BSTNodePtr self) {
 		if (left_height > right_height) {
 			return (left_height + 1);
 		}
-
 		else
 			return (right_height + 1);
 	}
@@ -153,14 +151,17 @@ int bst_height_node(BSTNodePtr self) {
 
 // print the tree in order
 void print_in_order_bst(BST* self) {
+	printf("\nIn order:\n");
 	print_in_order_bst_node(self->root);
 }
 
 void print_pre_order_bst(BST* self) {
+	printf("Pre order:\n");
 	print_pre_order_bst_node(self->root);
 }
 
 void print_post_order_bst(BST* self) {
+	printf("Post order:\n");
 	print_post_order_bst_node(self->root);
 }
 
@@ -204,15 +205,12 @@ void bst_test() {
 		}
 	}
 
-	printf("\nIn order:\n");
 	print_in_order_bst(&tree);
 	printf("\n\n");
 
-	printf("Pre order:\n");
 	print_pre_order_bst(&tree);
 	printf("\n\n");
 
-	printf("Post order:\n");
 	print_post_order_bst(&tree);
 	printf("\n\n");
 

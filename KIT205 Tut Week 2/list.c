@@ -13,6 +13,7 @@ List new_list() {
 // Function to print the contents of a list.
 void print_list(List* self) {
 	ListNodePtr current = self->head;
+
 	while (current != NULL) {
 		printf("%d", current->data);
 		current = current->next;
@@ -34,7 +35,6 @@ void insert_at_front(List* self, int data) {
 
 void insert_at_rear(List* self, int data) {
 	ListNodePtr new_node = malloc(sizeof * new_node);
-
 	ListNodePtr current = self->head;
 	ListNodePtr prev = NULL;
 
@@ -100,6 +100,7 @@ void delete_list(List* self, int data) {
 // Function to free the memory allocated to a list and all its nodes.
 void destroy_list(List* self) {
 	ListNodePtr current = self->head;
+
 	while (current != NULL) {
 		ListNodePtr to_free = current;
 		current = current->next;
