@@ -139,7 +139,7 @@ void list() {
 }
 
 // tests the linked list and binary search tree code
-void main(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
 	list();
 	bst_test();
 	
