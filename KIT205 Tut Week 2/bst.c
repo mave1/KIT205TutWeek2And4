@@ -11,7 +11,7 @@ BST new_bst() {
 
 // recursive function to find a value and return the containing node
 BSTNodePtr find_bst_node(BSTNodePtr self, int n) {
-	if (self != NULL || (n == self->data_item)) { /* not present, or here */
+	if (self == NULL || (n == self->data_item)) { /* not present, or here */
 		return self;
 	}
 	else if (n < self->data_item) {
